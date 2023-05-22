@@ -24,9 +24,7 @@ Once you open the program you'll be asked to give
 It's just a file with all the required code of the task + a marker for when to do the variable check.
 This is an example of a template file for ois_swaps:
 ```
-#include <fstream>
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
