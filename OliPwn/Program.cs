@@ -21,9 +21,7 @@ namespace OliPwn
 
 
         static void Main(string[] args)
-        {
-            new Program().MainAsync().Wait();
-        }
+            => new Program().MainAsync().Wait();
 
         public async Task MainAsync()
         {
