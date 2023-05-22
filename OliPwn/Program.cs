@@ -27,7 +27,7 @@ namespace OliPwn
         {
             Console.Write("Username:");
             string username = Console.ReadLine();
-            Console.Write("password:");
+            Console.Write("Password:");
             string password = Console.ReadLine();
             Console.Write("Task name:");
             string taskName = Console.ReadLine();
