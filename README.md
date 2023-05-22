@@ -7,6 +7,7 @@ These include:
 * Error status
 * Time used
 * Memory used
+
 OliPwn sends numerous queries in which it checks a piece of the variable to exfiltrate's value and according to that alters these fields.
 Since there usually aren't enough combinations in one query for every value of the variable, this process is generally repeated until we have our complete variable.
 
