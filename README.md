@@ -22,11 +22,9 @@ Once you open the program you'll be asked to give
 * The path of a template file
 ### What's a template file?
 It's just a file with all the required code of the task + a marker for when to do the variable check.
-This is an example of a template file for ois_swaps:
+Here is an example of a template file for ois_swaps:
 ```
-#include <fstream>
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -41,3 +39,25 @@ int main() {
 ```
 You can very easily make one from the task's template files.
 The program will then proceed to make the necessary queries and will return a list of variables, one for each testcase.
+Here is an example of using OliPwn to get the variable N from ois_swaps:
+```
+Username:flame
+Password:iLovePuppies<3
+Task name:ois_swaps
+Variable name:N
+Variable max value:1000000
+Invalid output example:0
+Template file name:swaps.cpp
+Checking ids: [1026483, 1026484, 1026485, 1026486, 1026487, 1026488, 1026489, 1026490, 1026492, 1026493]
+N/1 mod 4: 0 1 3 0 1 2 3 0 1 1 2 3 1 3 0 0 0 3 0 1 0 0 0 0 0 0 0 0 3 2
+N/4 mod 4: 1 1 0 1 1 1 1 2 0 0 0 0 3 3 1 2 2 1 1 1 2 0 0 0 0 0 0 0 3 3
+N/16 mod 4: 0 0 0 0 0 0 0 0 0 2 2 2 1 1 2 0 0 0 1 3 0 2 0 2 0 0 0 0 3 3
+N/64 mod 4: 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 2 2 2 2 2 2 2 1 0 1 1 1 1 0 0
+N/256 mod 4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 3 3 1 2 3 2 1 1 2 2 2 2 2 2
+N/1024 mod 4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 0 0 0 0 0 0 0
+N/4096 mod 4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 0 2 0 0 0 0 0 0
+N/16384 mod 4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 2 1 1 1 1 1 1
+N/65536 mod 4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 3 3 3 3 3 3 3
+N/262144 mod 4: 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 3 3 3 3 3 3
+4 5 3 4 5 6 7 8 1 97 98 99 93 95 100 5000 5000 4999 4500 4789 5000 100000 200000 500000 1000000 1000000 1000000 1000000 999999 999998
+```
