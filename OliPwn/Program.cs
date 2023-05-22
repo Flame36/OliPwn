@@ -8,7 +8,7 @@ namespace OliPwn
 {
     internal class Program
     {
-        public static string payload = "switch (({$VAR$} / {$DEFINEVAR$}) % 4) { case 0: return -2; case 1: *(char *)0 = 0; case 2: while (1) {} case 3: vector<long long> buf; while (1) { buf.push_back(0xdeadbeef); }}";
+        public static string payload = "switch (({$VAR$} / {$DEFINEVAR$}) % 4) { case 0: return -2; case 1: *(char *)0 = 0; case 2: while (1) {} case 3: long long* buf; while (1) { buf = new long long; *buf = 0xdeadbeef; }}";
         public const double MEMORY_TRESHOLD = 1000;
         public const double TIME_TRESHOLD = 0.001;
 
