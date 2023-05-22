@@ -37,7 +37,7 @@ namespace OliPwn
             long upperBound = long.Parse(Console.ReadLine());
             Console.Write("Invalid output example:");
             string invalidOutput = Console.ReadLine();
-            Console.Write("Template file name (with define and check marks):");
+            Console.Write("Template file name:");
             string file = File.ReadAllText(Console.ReadLine());
 
             OlinfoApi session = new();
@@ -50,7 +50,7 @@ namespace OliPwn
             int magnitude = (int)Math.Ceiling(Math.Log(upperBound)/Math.Log(4));
             for (int i = 0; i < magnitude; i++)
             {
-                string newFile = file.Replace("{$DEFINE$}", $"#define {{$DEFINEVAR$}} {0x01<<(i*2)}").Replace("{$CHECK$}", payload).Replace("{$VAR$}", variableName).Replace("{$DEFINEVAR$}", "GETPWNED");
+                string newFile = file.Replace("{$CHECK$}", payload).Replace("{$VAR$}", variableName).Replace("{$DEFINEVAR$}", (0x01 << (i * 2)).ToString());
                 Console.Write($"{(i+1)*100.0/magnitude:0.00}% ({(i+1)}/{magnitude})");
                 Console.CursorLeft = 0;
                 ids.Add(await session.SubmitFileAsync(task, newFile));
