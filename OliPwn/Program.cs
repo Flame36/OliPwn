@@ -50,7 +50,7 @@ namespace OliPwn
             int magnitude = (int)Math.Ceiling(Math.Log(upperBound)/Math.Log(4));
             for (int i = 0; i < magnitude; i++)
             {
-                string newFile = file.Replace("{$CHECK$}", payload).Replace("{$VAR$}", variableName).Replace("{$DEFINEVAR$}", (0x01 << (i * 2)).ToString());
+                string newFile = file.Replace("{$CHECK$}", payload).Replace("{$VAR$}", variableName).Replace("{$DEFINEVAR$}", $"{ 1L << (i * 2) }ll");
                 Console.Write($"{(i+1)*100.0/magnitude:0.00}% ({(i+1)}/{magnitude})");
                 Console.CursorLeft = 0;
                 ids.Add(await session.SubmitFileAsync(task, newFile));
@@ -77,7 +77,7 @@ namespace OliPwn
                     for (int j = 0; j < sub.Count; j++)
                         vars.Add(0);
 
-                Console.Write($"{variableName}/{0x01 << (i * 2)} mod 4: ");
+                Console.Write($"{variableName}/{1L << (i * 2)} mod 4: ");
                 for (int j = 0; j < sub.Count; j++)
                 {
                     long delta = 0;
@@ -89,7 +89,7 @@ namespace OliPwn
                     else if (sub[j].Text.Contains("killed"))
                         delta = 1;
 
-                    vars[j] += delta * (0x01 << (i * 2));
+                    vars[j] += delta * (1L << (i * 2));
                     Console.Write($"{delta} ");
                 }
                 Console.WriteLine();
